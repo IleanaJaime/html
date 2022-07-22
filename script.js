@@ -19,16 +19,21 @@ const medicamentos = [medicamento1, medicamento2, medicamento3, medicamento4, me
 
 const divmedicamentos = document.getElementById ("medicamentos")
 
-medicamentos.array.forEach( MedicamentoArray => {
+medicamentos.forEach( MedicamentoArray => {
     divmedicamentos.innerHTML += `
-    <div class="cardUsuarios p-1 rounded" id="Medicamento${MedicamentoArray.id}" style="width: 18rem;">
-    <img src="img/fondoCrypto.jpeg" class="card-img-top" alt="...">
+    <div class="cardMedicamentos p-1 rounded" id="Medicamento${MedicamentoArray.id}" style="width: 18rem;">
     <div class="card-body">
     <h5 class="card-title"> Nombre ${MedicamentoArray.nombreComercial}</h5>
     <p class="card-text"> Droga ${MedicamentoArray.nombreDroga}</p>
-    <p class="card-text"> Comp ${MedicamentoArray.comprimidos}</p>
-    <a href="#" class="btn btn-warning">Go somewhere</a>
+    <p class="card-text">  ${MedicamentoArray.comprimidos}</p>
+    <a href="#" class="btn btn-warning"> $${MedicamentoArray.precio}</a>
     </div>
 </div>
     `
+})
+
+const boton1 = document.getElementById ("boton1")
+
+boton1.addEventListener("click", () => {
+    console.log ("di click")
 })
