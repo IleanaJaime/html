@@ -9,28 +9,36 @@ class Medicamento{
     
 }
 
-const medicamento1 = new Medicamento("penoral", "Fenoximetilpenicilina", 1000, 18)
-const medicamento2 = new Medicamento("amoxolduo", "Amoxicilina", 500, 10)
-const medicamento3 = new Medicamento("clamoxolduo","AmoxicilinayÁcidoclavulánico", 600, 10)
-const medicamento4 = new Medicamento("cotrimox","SulfametoxazolyTrimetoprima", 300, 20)
-const medicamento5 = new Medicamento("azitral","Azitromicina", 450, 6)
+const medicamento1 = new Medicamento(1, "penoral", "Fenoximetilpenicilina", 1000, 18)
+const medicamento2 = new Medicamento(2, "amoxolduo", "Amoxicilina", 500, 10)
+const medicamento3 = new Medicamento(3, "clamoxolduo","AmoxicilinayÁcidoclavulánico", 600, 10)
+const medicamento4 = new Medicamento(4, "cotrimox","SulfametoxazolyTrimetoprima", 300, 20)
+const medicamento5 = new Medicamento(5, "azitral","Azitromicina", 450, 6)
 
 const medicamentos = [medicamento1, medicamento2, medicamento3, medicamento4, medicamento5]
 
 const divmedicamentos = document.getElementById ("medicamentos")
 
-medicamentos.forEach( MedicamentoArray => {
+
+function imprimirMedicamentos(array){
+array.forEach( MedicamentoArray => {
     divmedicamentos.innerHTML += `
     <div class="cardMedicamentos p-1 rounded" id="Medicamento${MedicamentoArray.id}" style="width: 18rem;">
-    <div class="card-body">
-    <h5 class="card-title"> Nombre ${MedicamentoArray.nombreComercial}</h5>
+    <div class="card-body"> 
+    <h5 href ="#" class="btn btn-tittle"> Nombre ${MedicamentoArray.nombreComercial}</h5>
     <p class="card-text"> Droga ${MedicamentoArray.nombreDroga}</p>
-    <p class="card-text">  ${MedicamentoArray.comprimidos}</p>
-    <a href="#" class="btn btn-warning"> $${MedicamentoArray.precio}</a>
+    <p class="card-text"> Comp ${MedicamentoArray.comprimidos}</p>
+    <a class="card-text"> $ ${MedicamentoArray.precio}</a>
     </div>
 </div>
     `
-})
+})}
+
+imprimirMedicamentos(medicamentos)
+
+localstorage.setltem("medicamentos", medicamentos)
+
+const buscador = document.getElementById ("buscador")
 
 const boton1 = document.getElementById ("boton1")
 
