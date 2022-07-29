@@ -25,9 +25,9 @@ array.forEach( MedicamentoArray => {
     divmedicamentos.innerHTML += `
     <div class="cardMedicamentos p-1 rounded" id="Medicamento${MedicamentoArray.id}" style="width: 18rem;">
     <div class="card-body"> 
-    <h5 href ="#" class="btn btn-tittle"> Nombre ${MedicamentoArray.nombreComercial}</h5>
-    <p class="card-text"> Droga ${MedicamentoArray.nombreDroga}</p>
-    <p class="card-text"> Comp ${MedicamentoArray.comprimidos}</p>
+    <h5 href ="#" class="btn btn-tittle"> ${MedicamentoArray.nombreComercial}</h5>
+    <p class="card-text"> ${MedicamentoArray.nombreDroga}</p>
+    <p class="card-text"> Comp. ${MedicamentoArray.comprimidos}</p>
     <a class="card-text"> $ ${MedicamentoArray.precio}</a>
     </div>
 </div>
@@ -36,12 +36,21 @@ array.forEach( MedicamentoArray => {
 
 imprimirMedicamentos(medicamentos)
 
+buscador.addEventListener("keyup", (e) => {
+    let filtrado = []
+
+    medicamentos.forEach((medicamentos) => {
+
+        if (medicamento.nombre.includes(e.target.value)) {
+
+            filtrado.push(medicamento)
+        }
+    })
+    console.log(e.target.value)
+})
+
 localstorage.setltem("medicamentos", medicamentos)
 
 const buscador = document.getElementById ("buscador")
 
-const boton1 = document.getElementById ("boton1")
 
-boton1.addEventListener("click", () => {
-    console.log ("di click")
-})
