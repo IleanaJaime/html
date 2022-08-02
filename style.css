@@ -1,10 +1,21 @@
+
 .navbar-brand{
+    color: orangered;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold ;
+    font-style: italic;
+}
+
+.nav-item{
+    color: orangered;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+}
+.nav-linka.ctive{
     color: orangered;
 }
 
-.nav-link{
-    color: orange;
-}
 
 body{
     background-color: rgb(221, 180, 103);

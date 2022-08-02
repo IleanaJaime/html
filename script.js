@@ -36,6 +36,8 @@ array.forEach( MedicamentoArray => {
 
 imprimirMedicamentos(medicamentos)
 
+const buscador = document.getElementById ("buscador")
+
 buscador.addEventListener("keyup", (e) => {
     let filtrado = []
 
@@ -47,10 +49,7 @@ buscador.addEventListener("keyup", (e) => {
         }
     })
     console.log(e.target.value)
+imprimirMedicamentos(filtrado)
 })
 
-localstorage.setltem("medicamentos", medicamentos)
-
-const buscador = document.getElementById ("buscador")
-
-
+localStorage.setltem("medicamentos", medicamentos)
