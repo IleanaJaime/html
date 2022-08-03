@@ -39,17 +39,16 @@ imprimirMedicamentos(medicamentos)
 const buscador = document.getElementById ("buscador")
 
 buscador.addEventListener("keyup", (e) => {
+    divmedicamentos.innerHTML = ""
+
     let filtrado = []
 
-    medicamentos.forEach((medicamentos) => {
-
-        if (medicamento.nombre.includes(e.target.value)) {
-
-            filtrado.push(medicamento)
+    medicamentos.forEach((medicamento) => {
+        medicamento.nombreComercial.includes(e.target.value) && filtrado.push(medicamento)
+        
         }
-    })
+    )
     console.log(e.target.value)
-imprimirMedicamentos(filtrado)
-})
 
-localStorage.setltem("medicamentos", medicamentos)
+imprimirMedicamentos(filtrado)
+localStorage.setItem("medicamentos", medicamentos)})
