@@ -1,3 +1,5 @@
+// Creo constructor de medicamentos, cada objeto y su array para luego poder optimizar
+
 class Medicamento{
     constructor(id, nombreComercial, nombreDroga, precio, comprimidos){
         this.id = id;
@@ -19,7 +21,7 @@ const medicamentos = [medicamento1, medicamento2, medicamento3, medicamento4, me
 
 const divmedicamentos = document.getElementById ("medicamentos")
 
-
+// Inserto HTML creando una plantilla de texto para ahorrar codigo.
 function imprimirMedicamentos(array){
 array.forEach( MedicamentoArray => {
     divmedicamentos.innerHTML += `
@@ -35,14 +37,13 @@ array.forEach( MedicamentoArray => {
 })}
 
 imprimirMedicamentos(medicamentos)
-
+// Creo el buscador.
 const buscador = document.getElementById ("buscador")
 
 buscador.addEventListener("keyup", (e) => {
     divmedicamentos.innerHTML = ""
-
     let filtrado = []
-
+//Optimizo el If y Array utilizando &&
     medicamentos.forEach((medicamento) => {
         medicamento.nombreComercial.includes(e.target.value) && filtrado.push(medicamento)
         
