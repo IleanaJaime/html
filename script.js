@@ -53,3 +53,9 @@ buscador.addEventListener("keyup", (e) => {
 
 imprimirMedicamentos(filtrado)
 localStorage.setItem("medicamentos", medicamentos)})
+//Agregando sweet alert
+Swal.fire({
+    icon: 'info',
+    title: 'BIENVENIDO/A A NUESTRO VADEMECUM',
+    text: 'En este sitio web encontraras todos nuestros medicamentos de venta bajo receta!',
+})
