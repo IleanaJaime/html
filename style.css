@@ -28,10 +28,13 @@
 
 }
 body{
-    background-color: #fa7c2d;
+    background-color:white;
 }
 .cardMedicamentos{
-    background-color:rgb(5, 90, 40);
+    background-color:#fa983c;
     margin: 2%;
-    color: rgb(28, 219, 37);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    color:rgb(5, 90, 40);
 }
