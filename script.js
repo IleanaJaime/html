@@ -1,14 +1,23 @@
 
 // Creo constructor de medicamentos, cada objeto y su array para luego poder optimizar
 
+const medicamentos = []
+
 fetch('./json/medicamentos.json')
 .then(response => response.json())
-.then(data => function(){
-    data.forEach(medicamento => {
-        medicamento.push(new medicamento(medicamento))
+.then((data) => {
+    data.medicamentos.forEach((medicamento) => {
+        medicamentos.push (new Medicamento(
+            medicamento.id,
+            medicamento.nombre,
+            medicamento.droga,
+            medicamento.precio,
+            medicamento.comprimidos,
+            medicamento.miligramos
+        ))
     })
+        imprimirMedicamentos(medicamentos)
 })
-.then(()=> {imprimirMedicamentos(medicamentos)})
 
 const divmedicamentos = document.getElementById ("medicamentos")
 
@@ -140,7 +149,7 @@ array.forEach( MedicamentoArray => {
     `
 })}
 
-imprimirMedicamentos(medicamentos)
+// imprimirMedicamentos(medicamentos)
 
 // Creo el buscador.
 const buscador = document.getElementById ("buscador")
