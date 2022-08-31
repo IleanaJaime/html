@@ -1,6 +1,7 @@
 const divmedidor = document.getElementById ("medidor")
 
 
+
 let condicion
 
 do { 
@@ -39,3 +40,8 @@ function MedidorPresion(presion){
         alert("No valido, vuelve a intentar")
 }
 }
+Swal.fire({
+    icon: 'info',
+    title: 'DESEAS MEDIR TU PRESION ARTERIAL?',
+    text: 'Segui los siguientes pasos y calcula tu presion! ',
+})
